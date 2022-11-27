@@ -1,0 +1,15 @@
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.csproj.AssemblyReference.cache
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.AssemblyInfoInputs.cache
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.AssemblyInfo.cs
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.csproj.CoreCompileInputs.cache
+C:\Materiale\Dizertatie\dii_personal\dii_personal\bin\Debug\net7.0\dii_personal.exe
+C:\Materiale\Dizertatie\dii_personal\dii_personal\bin\Debug\net7.0\dii_personal.deps.json
+C:\Materiale\Dizertatie\dii_personal\dii_personal\bin\Debug\net7.0\dii_personal.runtimeconfig.json
+C:\Materiale\Dizertatie\dii_personal\dii_personal\bin\Debug\net7.0\dii_personal.dll
+C:\Materiale\Dizertatie\dii_personal\dii_personal\bin\Debug\net7.0\dii_personal.pdb
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.dll
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\refint\dii_personal.dll
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.pdb
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\dii_personal.genruntimeconfig.cache
+C:\Materiale\Dizertatie\dii_personal\dii_personal\obj\Debug\net7.0\ref\dii_personal.dll
