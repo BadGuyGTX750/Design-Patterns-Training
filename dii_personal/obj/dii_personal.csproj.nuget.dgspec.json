@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Materiale\\Dizertatie\\dii_personal\\dii_personal\\dii_personal.csproj": {}
+    "C:\\Users\\Stefan\\Desktop\\Proiecte\\Learning_Design_Patterns\\dii_personal\\dii_personal.csproj": {}
   },
   "projects": {
-    "C:\\Materiale\\Dizertatie\\dii_personal\\dii_personal\\dii_personal.csproj": {
+    "C:\\Users\\Stefan\\Desktop\\Proiecte\\Learning_Design_Patterns\\dii_personal\\dii_personal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Materiale\\Dizertatie\\dii_personal\\dii_personal\\dii_personal.csproj",
+        "projectUniqueName": "C:\\Users\\Stefan\\Desktop\\Proiecte\\Learning_Design_Patterns\\dii_personal\\dii_personal.csproj",
         "projectName": "dii_personal",
-        "projectPath": "C:\\Materiale\\Dizertatie\\dii_personal\\dii_personal\\dii_personal.csproj",
-        "packagesPath": "C:\\Users\\stefa\\.nuget\\packages\\",
-        "outputPath": "C:\\Materiale\\Dizertatie\\dii_personal\\dii_personal\\obj\\",
+        "projectPath": "C:\\Users\\Stefan\\Desktop\\Proiecte\\Learning_Design_Patterns\\dii_personal\\dii_personal.csproj",
+        "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Stefan\\Desktop\\Proiecte\\Learning_Design_Patterns\\dii_personal\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\stefa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

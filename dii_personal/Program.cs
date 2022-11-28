@@ -9,13 +9,17 @@ public class Program
     {
         Console.WriteLine("\nis running...");
         DependencyContainer container = new DependencyContainer();
-        container.AddDependency<CallService>();
-        container.AddDependency<MessageService>();
-        container.AddDependency<AntenaService>();
-        DependencyResolver builder = new DependencyResolver(container);
-        builder.GetService<CallService>().ExecuteService();
-        builder.GetService<MessageService>().ExecuteService();
-        builder.GetService<MessageService>().ExecuteService();
+        //Add your dependencies 
+        container.AddSingleton<CallService>();
+        container.AddSingleton<MessageService>();
+        container.AddTransient<AntenaService>();
+
+        container.GetService<CallService>().ExecuteService();
+        container.GetService<CallService>().ExecuteService();
+        container.GetService<CallService>().ExecuteService();
+        container.GetService<MessageService>().ExecuteService();
+        container.GetService<MessageService>().ExecuteService();
+        container.GetService<MessageService>().ExecuteService();
     }
 }
 // Dependencies to resolve:
@@ -23,10 +27,32 @@ public class Program
 // Client - - - > MessageService - - - > AntenaService
 public class DependencyResolver
 {
-    DependencyContainer _container;
-    public DependencyResolver(DependencyContainer container)
+    
+}
+
+public enum DependencyLifetime {
+    Transient = 0,
+    Singleton = 1
+}
+
+public class DependencyContainer
+{
+    List<Dependency> _dependencies;
+    public DependencyContainer()
     {
-        _container = container;
+        _dependencies = new List<Dependency>();
+    }
+    public void AddSingleton<T>()
+    {
+        _dependencies.Add(new Dependency(typeof(T), DependencyLifetime.Singleton));
+    }
+    public void AddTransient<T>()
+    {
+        _dependencies.Add(new Dependency(typeof(T), DependencyLifetime.Transient));
+    }
+    public Dependency GetDependency(Type type)
+    {
+        return _dependencies.First(dependency => dependency.type == type);
     }
     public T GetService<T>()
     {
@@ -34,7 +60,7 @@ public class DependencyResolver
     }
     public object GetService(Type type)
     {
-        var dependency = _container.GetDependency(type);
+        var dependency = this.GetDependency(type);
         var constructor = dependency.type.GetConstructors().Single();
         var parameters = constructor.GetParameters().ToArray();
 
@@ -56,35 +82,24 @@ public class DependencyResolver
             return dependency.Implementation;
         }
         var implementation = factory(dependency.type);
+        if (dependency.lifetime == DependencyLifetime.Singleton)
+        {
+            dependency.AddImplementation(implementation);
+        }
         return implementation;
-    }
-}
-
-public class DependencyContainer
-{
-    List<Dependency> _dependencies;
-    public DependencyContainer()
-    {
-        _dependencies = new List<Dependency>();
-    }
-    public void AddDependency<T>()
-    {
-        _dependencies.Add(new Dependency(typeof(T)));
-    }
-    public Dependency GetDependency(Type type)
-    {
-        return _dependencies.First(dependency => dependency.type == type);
     }
 }
 
 public class Dependency
 {
-    public Dependency (Type t)
+    public Dependency (Type t, DependencyLifetime l)
     {
         type = t;
+        lifetime = l;
         IsImplemented = false;
     }
     public Type type{get;set;}
+    public DependencyLifetime lifetime{get;set;}
     public object Implementation{get;set;}
     public bool IsImplemented{get;set;}
     public void AddImplementation (object i)
@@ -96,32 +111,41 @@ public class Dependency
 
 public class CallService
 {
+    int _random;
     AntenaService _antenaNumber;
     public CallService(AntenaService antenaNumber)
     {
+        _random = new Random().Next();
         _antenaNumber = antenaNumber;
     }
     public void ExecuteService()
     {
-        Console.WriteLine($"Call some number...\n   Connecting to antena {_antenaNumber.GetNearestAntena()}...");
+        Console.WriteLine($"Call some number ({_random})...\n   Connecting to antena {_antenaNumber.GetNearestAntena()} ({_antenaNumber._random})...");
     }
 }
 
 public class MessageService
 {
+    int _random;
     AntenaService _antenaNumber;
     public MessageService(AntenaService antenaNumber)
     {
+        _random = new Random().Next();
         _antenaNumber = antenaNumber;
     }
     public void ExecuteService()
     {
-        Console.WriteLine($"Message some number...\n   Connecting to antena {_antenaNumber.GetNearestAntena()}...");
+        Console.WriteLine($"Message some number ({_random})...\n   Connecting to antena {_antenaNumber.GetNearestAntena()} ({_antenaNumber._random})...");
     }
 }
 
 public class AntenaService
 {
+    public int _random;
+    public AntenaService()
+    {
+        _random = new Random().Next();
+    }
     public int GetNearestAntena()
     {
         return new Random().Next(0, 100);
